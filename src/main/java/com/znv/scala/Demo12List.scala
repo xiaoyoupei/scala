@@ -78,7 +78,21 @@ object Demo12List {
     /**
       * 将集合中每一行单词拆分
       */
-    println(strs.flatMap(_.split(",")))
+    println(strs.flatMap(_.split(","))) //flatMap函数，将集合中的元素一个个传递给后面函数，进行拆分操作，最后返回一个新的集合
+
+
+    /**
+      * 排序
+      * 1、sortBy：指定一个列来排序，默认是升序  返回新集合
+      * 2、sortWith：指定排序的规则  返回新集合
+      */
+    val list3: List[Int] = 1 :: 2 :: 3 :: 4 :: 5 :: 6 :: 124 :: 12412 :: 124 :: 54 :: 35 :: Nil
+
+    println(list3.sortBy((i: Int) => -i)) //负号降序
+
+    println(list3.sortWith((i: Int, j: Int) => i < j))
+
+    println(list3.sorted)
 
   }
 }
